@@ -1,4 +1,3 @@
-from pickletools import pyset
 from brownie import network, exceptions
 from scripts.helpful_scripts import (
     INTIIAL_PRICE_FEED_VALUE,
@@ -51,11 +50,10 @@ def test_stake_tokens(amount_staked):
     assert token_farm.stakers(0) == account.address
     return token_farm, dapp_token
 
-
 def test_issue_tokens(amount_staked):
     # Arrange
     if network.show_active() not in LOCAL_BLOCKCHAIN_ENVIRONMENTS:
-        pyset.skip("Only for local testing!")
+        pytest.skip("Only for local testing!")
     account = get_account()
     token_farm, dapp_token = test_stake_tokens(amount_staked)
     starting_balance = dapp_token.balanceOf(account.address)
