@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "ganache-cli": "^6.12.2"
+  },
+  "dependencies": {
+    "ethers": "^5.5.4",
+    "react-scripts": "^5.0.0"
+  }
+}
